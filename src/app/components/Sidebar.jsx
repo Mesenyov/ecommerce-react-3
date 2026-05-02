@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
+import { RegisterBanner } from './RegisterBanner';
 import './Sidebar.css';
 
 export function Sidebar({ brands, currentFilters, onApply }) {
-  // Драфт фильтров (то, что мы сейчас вводим)
-  const[draftFilters, setDraftFilters] = useState(currentFilters);
+  const [draftFilters, setDraftFilters] = useState(currentFilters);
+  
+  // Стейт видимости баннера
+  const [showBanner, setShowBanner] = useState(true);
 
-  // Синхронизируем драфт, если сбросились глобальные фильтры (при смене категории)
   useEffect(() => {
     setDraftFilters(currentFilters);
   }, [currentFilters]);
@@ -56,7 +58,11 @@ export function Sidebar({ brands, currentFilters, onApply }) {
         Apply Filters
       </button>
 
-      {}
+      {showBanner && (
+        <div style={{ marginTop: '20px', width: '100%' }}>
+           <RegisterBanner onClose={() => setShowBanner(false)} />
+        </div>
+      )}
     </aside>
   );
 }
