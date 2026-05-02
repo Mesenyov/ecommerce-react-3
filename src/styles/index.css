@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+:root {
+  --primary-color: #030213; /* Черный для кнопок */
+  --accent-color: #D4183D; /* Красный спецпредложения */
+  --bg-light: #F3F3F5; /* Серый фон дропдаунов */
+  --bg-card: #ECECF0; /* Серый фон картинок */
+  --text-gray: #717182;
+  --border-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #0A0A0A;
+  background-color: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: 'Inter', sans-serif;
+}
